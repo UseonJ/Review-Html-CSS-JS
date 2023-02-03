@@ -102,3 +102,23 @@ var people = [
   
   // "Name: Mike Smith, Father: Harry Smith"
   // "Name: Tom Jones, Father: Richard Jones"
+
+//   식별자 규칙
+// 키워드를 사용하면 안 된다.
+// 숫자로 시작하면 안 된다.
+// 특수 문자는 _와 $만 허용된다.
+// 공백 문자를 포함할 수 없다.
+
+// 속성 이름이 유효한 JavaScript 식별자명이 아닌 경우
+// 구조 분해는 JavaScript 식별자 이름으로 적합하지 않은 속성명이 제공된 경우에도 이용할 수 있습니다. 이 때는 대체할 유효한 식별자명을 제공해야 합니다.
+
+const foo = { 'fizz-buzz': true }; //-는 허용되는 특수문자가 아님!! 그보다도 속성에 '' 붙여서 문자열로 사용한게 더 부적절!!
+const { 'fizz-buzz': fizzBuzz } = foo; //fizzBuzz로 대체
+
+console.log(fizzBuzz); // "true"
+//then what is foo now?
+console.log(foo) //{ 'fizz-buzz': true }
+console.log(foo.fizzBuzz) // undefined
+console.log(foo['fizz-buzz'])
+// console.log(foo.'fizz-buzz') // 작동안됨.
+
